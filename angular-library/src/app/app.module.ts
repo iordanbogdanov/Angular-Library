@@ -10,16 +10,19 @@ import { appInterceptorProvider } from './app.interceptor';
 import { UserModule } from './user/user.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent
+  ],
   imports: [
     BrowserModule,
     CoreModule,
     UserModule,
     SharedModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [appInterceptorProvider],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
