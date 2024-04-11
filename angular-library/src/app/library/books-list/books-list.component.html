@@ -1,0 +1,27 @@
+<main>
+  <div class="container">
+    <!-- book component  -->
+    <h3>Book list</h3>
+    <div *ngFor="let book of books" class="book-container">
+      <div class="book-wrapper">
+        <div class="book-name">
+          <a [routerLink]="book._id" class="normal">
+            <h2>{{ book.bookName }}</h2>
+          </a>
+          <div>
+            <p>Author: {{ book.authorName }}</p>
+            <img src="{{ book.bookImage }}" />
+            <p>Description: {{ book.bookDescription | slice : 30 }}</p>
+            <p>
+              Date: <time>{{ book._createdOn | date }}</time>
+            </p>
+            <hr />
+            <div>
+              <button routerLink="/library/{{ book._id }}">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
