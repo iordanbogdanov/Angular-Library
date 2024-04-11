@@ -1,1 +1,72 @@
-<p>register works!</p>
+<div class="container">
+  <form class="register">
+    <fieldset>
+      <h2>Registration Form</h2>
+
+      <!-- username -->
+      <p class="field field-icon">
+        <label for="username"
+          ><span><i>Username: </i></span></label
+        >
+        <input
+          class="input-error"
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Johny"
+          formControlName="username"
+        />
+      </p>
+
+      <!-- email -->
+      <p class="field field-icon">
+        <label for="email"
+          ><span><i>Email: </i></span></label
+        >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="john.doe@gmail.com"
+          formControlName="email"
+        />
+      </p>
+
+      <ng-container formGroupName="passGroup">
+        <!-- password -->
+        <p class="field field-icon">
+          <label for="password"
+            ><span><i>Password: </i></span></label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="******"
+            formControlName="password"
+          />
+        </p>
+
+        <p class="field field-icon">
+          <label for="rePassword"
+            ><span><i>Confirm password: </i></span></label
+          >
+          <input
+            type="password"
+            name="rePassword"
+            id="rePassword"
+            placeholder="******"
+            formControlName="rePassword"
+          />
+        </p>
+      </ng-container>
+
+      <button>Create account</button>
+
+      <p class="text-center">
+        Have an account?
+        <a routerLink="/users/login">Log In</a>
+      </p>
+    </fieldset>
+  </form>
+</div>

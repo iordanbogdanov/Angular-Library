@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="container">
+  <form class="login">
+    <fieldset>
+      <h2>Login Form</h2>
+
+      <p class="field field-icon">
+        <label for="email"
+          ><span><i>Email: </i></span></label
+        >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="email@gmail.com"
+          ngModel
+          required
+        />
+      </p>
+
+      <p>
+        <label for="password"
+          ><span><i>Password: </i></span></label
+        >
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="******"
+          ngModel
+          required
+          minlength="5"
+        />
+      </p>
+
+      <button>Login</button>
+
+      <p class="text-center">
+        Have an account?<a routerLink="/users/register">Register</a>
+      </p>
+    </fieldset>
+  </form>
+</div>
