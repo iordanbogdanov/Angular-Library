@@ -1,26 +1,25 @@
 <div class="header-wrapper opacity">
-    <div class="header">
-      <div id="menu-wrapper">
-        <div id="menu" class="menu">
-          <ul class="tiny">
-            <span>
-              <li><a href="/">Home</a></li>
-              <li><a href="/library">Library</a></li>
-              <li><a href="/library/authors">Book Authors</a></li>
-            </span>
-            <span>
-              <li><a href="/library/create-book">Create a Book</a></li>
-              <li><a href="/users/profile">Profile</a></li>
-              <li><a>Logout</a></li>
-            </span>
-            <span>
-              <li><a href="/users/login">Login</a></li>
-              <li><a href="/users/register">Register</a></li>
-            </span>
-          </ul>
-        </div>
+  <div class="header">
+    <div id="menu-wrapper">
+      <div id="menu" class="menu">
+        <ul class="tiny">
+          <span>
+            <li><a href="/">Home</a></li>
+            <li><a href="/library">Library</a></li>
+            <li><a href="/library/authors">Book Authors</a></li>
+          </span>
+          <span *ngIf="isLoggedIn">
+            <li><a href="/library/create-book">Create a Book</a></li>
+            <li><a href="/users/profile">Profile</a></li>
+            <li (click)="logout()"><a>Logout</a></li>
+          </span>
+          <span *ngIf="!isLoggedIn">
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+          </span>
+        </ul>
       </div>
-      <div class="clear"></div>
     </div>
+    <div class="clear"></div>
   </div>
-  
+</div>
