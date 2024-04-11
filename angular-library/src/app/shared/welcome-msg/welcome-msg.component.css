@@ -1,62 +1,61 @@
 /* welcome component */
 
 .welcome {
-    padding: 0.3em 0.5em;
-    border: 1px solid #999;
-    border-radius: 0.3em;
-    font-size: 0.8em;
-    margin-top: 1em;
-  }
-  
-  .welcome div {
-    margin: 30px auto;
-  }
-  
-  .welcome h3 {
-    background-color: #999;
-    border-radius: 0.3em;
-    width: auto;
-    padding: 0.3em 1em;
-    text-align: center;
-    font-size: 24px;
-  }
-  
-  .italic-bold p {
-    font-style: italic;
-    font-weight: bold;
-    margin: 2em;
-    font-size: 24px;
-  }
-  
-  p {
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  .welcome a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    background-color: #999;
-    border: none;
-    border-radius: 0.3em;
-    padding: 0.5em 5.2em;
-    margin: 1em;
-    font-size: 16px;
-  }
-  
-  .welcome a:hover {
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .welcome ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 1em;
-  }
-  
-  .welcome li {
-    list-style: none;
-  }
-  
+  padding: 0.3em 0.5em;
+  border: 1px solid #999;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+.welcome div {
+  margin: 30px auto;
+}
+
+.welcome h3 {
+  background-color: #999;
+  border-radius: 0.3em;
+  width: auto;
+  padding: 0.3em 1em;
+  text-align: center;
+  font-size: 24px;
+}
+
+.italic-bold p {
+  font-style: italic;
+  font-weight: bold;
+  margin: 2em;
+  font-size: 24px;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.welcome a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color: #999;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em 5.2em;
+  margin: 1em;
+  font-size: 16px;
+}
+
+.welcome a:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.welcome ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 1em;
+}
+
+.welcome li {
+  list-style: none;
+}

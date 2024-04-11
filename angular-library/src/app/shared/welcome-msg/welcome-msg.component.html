@@ -1,20 +1,20 @@
 <div class="welcome">
-    <h3>Welcome!</h3>
-    <p>Book library is the place where you can find the right book for you.</p>
-    <p>Take a look and pick a book of your choice.</p>
-    <hr />
-    <div class="italic-bold">
-      <p>"Books are a uniquely portable magic." - Stephen King</p>
-    </div>
-  
-    <div class="logged">
-      <ul>
-        <li>
-          <a routerLink="/users/login"> Login </a>
-        </li>
-        <li>
-          <a routerLink="/users/register"> Register </a>
-        </li>
-      </ul>
-    </div>
+  <h3>Welcome!</h3>
+  <p>Book library is the place where you can find the right book for you.</p>
+  <p>Take a look and pick a book of your choice.</p>
+  <hr />
+  <div class="italic-bold">
+    <p>"Books are a uniquely portable magic." - Stephen King</p>
   </div>
+
+  <div *ngIf="!isLoggedIn" class="logged">
+    <ul>
+      <li>
+        <a routerLink="/users/login"> Login </a>
+      </li>
+      <li>
+        <a routerLink="/users/register"> Register </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-welcome-msg',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./welcome-msg.component.css'],
 })
 export class WelcomeMsgComponent {
+  constructor(private userService: UserService) {}
 
+  @Input('isLoggedIn') isLoggedIn = this.isLogged;
+
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
 }

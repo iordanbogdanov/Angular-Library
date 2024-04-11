@@ -1,7 +1,8 @@
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { UserForAuth } from '../types/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { ApiService } from '../api.service';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
