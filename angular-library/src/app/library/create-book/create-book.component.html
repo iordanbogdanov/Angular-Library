@@ -1,0 +1,120 @@
+<!-- homepage -->
+<div class="container">
+    <div class="new-book-border">
+      <div class="header-background">
+        <span>Create a book</span>
+      </div>
+  
+      <form #form="ngForm" (ngSubmit)="createBook(form)">
+
+        <hr />
+
+        <div class="new-book-title">
+          <label for="bookName">Book title <span class="red">*</span></label>
+          <input
+            type="text"
+            name="bookName"
+            id="bookName"
+            #inputbookName="ngModel"
+            ngModel
+            required
+            minlength="2"
+          />
+  
+          <ng-container *ngIf="inputbookName.touched">
+            <p class="error" *ngIf="inputbookName?.errors?.['required']">
+              Book name is required.
+            </p>
+            <p class="error" *ngIf="inputbookName?.errors?.['minlength']">
+              Book name must be at least 2 characters long.
+            </p>
+          </ng-container>
+        </div>
+
+        <hr />
+
+        <div class="new-book-content">
+          <label for="bookAuthor">Book author <span class="red">*</span></label>
+          <textarea
+            type="text"
+            name="authorName"
+            id="authorName"
+            rows="1"
+            class="height"
+            #textareaAuthorName="ngModel"
+            ngModel
+            required
+            minlength="6"
+          ></textarea>
+  
+          <ng-container *ngIf="textareaAuthorName.touched">
+            <p class="error" *ngIf="textareaAuthorName?.errors?.['required']">
+              The field with the book author is required.
+            </p>
+            <p class="error" *ngIf="textareaAuthorName?.errors?.['minlength']">
+              The book author must be at least 6 characters long.
+            </p>
+          </ng-container>
+        </div>
+
+        <hr />
+
+        <div class="new-book-content">
+          <label for="bookDescription">Book description <span class="red">*</span></label>
+          <textarea
+            type="text"
+            name="bookDescription"
+            id="bookDescription"
+            rows="6"
+            class="height"
+            #textareaBookDescription="ngModel"
+            ngModel
+            required
+            minlength="10"
+          ></textarea>
+  
+          <ng-container *ngIf="textareaBookDescription.touched">
+            <p class="error" *ngIf="textareaBookDescription?.errors?.['required']">
+              The field with the book description is required.
+            </p>
+            <p class="error" *ngIf="textareaBookDescription?.errors?.['minlength']">
+              The book description must be at least 10 characters long.
+            </p>
+          </ng-container>
+        </div>
+
+        <hr />
+
+        <div class="new-book-content">
+          <label for="bookImage">Book image URL <span class="red">*</span></label>
+          <textarea
+            type="text"
+            name="bookImage"
+            id="bookImage"
+            rows="2"
+            class="height"
+            #bookImageURL="ngModel"
+            ngModel
+            required
+            minlength="10"
+          ></textarea>
+  
+          <ng-container *ngIf="bookImageURL.touched">
+            <p class="error" *ngIf="bookImageURL?.errors?.['required']">
+              The field with a book URL is required.
+            </p>
+            <p class="error" *ngIf="bookImageURL?.errors?.['minlength']">
+              The book URL must be at least 10 characters long.
+            </p>
+          </ng-container>
+        </div>
+
+        <div class="new-book-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="public">Post</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  

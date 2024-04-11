@@ -1,0 +1,81 @@
+/* new-book */
+
+.new-book-border {
+    border: 1px solid;
+    border-radius: 1em;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+  }
+  
+  .new-book-border .input {
+    margin-bottom: 1em;
+  }
+  
+  .header-background {
+    text-align: center;
+    display: block;
+    font-size: 24px;
+    font-weight: bolder;
+    border-radius: 10px;
+    background-color: #999;
+    height: 50px;
+    line-height: 6vh;
+  }
+  
+  .title,
+  .new-book-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-book-content {
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .new-book-content textarea {
+    width: auto;
+    padding: 0.5em;
+    margin: 0;
+  }
+  
+  .new-book-content label {
+    margin-bottom: 0.3em;
+  }
+  
+  .new-book-title input {
+    width: 70%;
+    border-radius: 0.3em;
+    padding: 0.35em;
+  }
+  
+  button + button {
+    margin-left: 1rem;
+  }
+  
+  .new-book-buttons {
+    margin-top: 1em;
+    text-align: center;
+  }
+  
+  .new-book-buttons button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+  }
+  
+  p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+  }
+  
+  .input-error {
+    border-left-color: red;
+  }
+  
