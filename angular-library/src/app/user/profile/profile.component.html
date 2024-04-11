@@ -1,1 +1,23 @@
-<p>profile works!</p>
+<!-- homepage -->
+<div class="container">
+    <div class="profile">
+      <img src="./../../../assets/profile.png" alt="default user" />
+      <h3>User Info</h3>
+  
+      <ng-container>
+        <hr />
+        <div class="flex">
+          <p>
+            Username: <span>{{ profileDetails.username }}</span>
+          </p>
+        </div>
+        <div class="flex">
+          <p>
+            Email: <span>{{ profileDetails.email }}</span>
+          </p>
+        </div>
+        <hr />
+      </ng-container>
+    </div>
+  </div>
+  
