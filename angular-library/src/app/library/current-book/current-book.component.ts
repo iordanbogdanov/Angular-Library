@@ -48,7 +48,7 @@ export class CurrentBookComponent implements OnInit {
 
       this.apiService.getBook(id).subscribe((book) => {
         this.book = book;
-        console.log(book);
+
         let bookName = this.book.bookName;
         let bookDescription = this.book.bookDescription;
         let bookImage = this.book.bookImage;
