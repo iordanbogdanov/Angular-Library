@@ -9,6 +9,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: 'data/library',
+    loadChildren: () => import('./library/library.module').then((m) => m.LibraryModule),
+  },
   { path: 'error', component: ErrorComponent },
 ];
 

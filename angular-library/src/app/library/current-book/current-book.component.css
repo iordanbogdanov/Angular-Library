@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  overflow: auto;
+  clear: both;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border: 1px solid #999;
+  border-radius: 0.3em;
+  padding: 0.3em 0.5em;
+  margin: auto;
+}
+
+.book-content {
+  text-align: center;
+  padding: 0.3em 0.5em;
+  font-size: 0.8em;
+  margin-top: 1em;
+  min-width: 400px;
+  height: auto;
+}
+
+.book-name {
+  background-color: #999;
+  font-size: 24px;
+}
+
+img {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+div > button {
+  display: inline-block;
+  overflow: auto;
+  clear: both;
+  padding: 0.3em 0.5em;
+  margin: 10px;
+}
+
+p.error {
+  text-align: left;
+  border-radius: 0.3em;
+  color: red;
+  padding-top: 0;
+}
+
+p {
+  text-align: center;
+}
+
+.buttonDiv {
+  text-align: center;
+}
+
+input {
+  width: 300px;
+}
+
+textarea {
+  width: 300px;
+  min-height: 150px;
+}

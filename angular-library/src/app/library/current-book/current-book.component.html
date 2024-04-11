@@ -1,0 +1,167 @@
+<div class="container">
+  <!-- book content  -->
+  <div class="book-content" *ngIf="!showEditMode">
+    <!-- book-title  -->
+    <div class="book-title">
+      <div class="book-name-wrapper">
+        <div class="book-name">
+          <h2>{{ book.bookName }}</h2>
+        </div>
+        <div class="book-author">
+          <p>
+            Author: <span>{{ book.authorName }}</span>
+          </p>
+        </div>
+        <div class="book-image">
+          <p>
+            <img src="{{ book.bookImage }}" />
+          </p>
+        </div>
+        <div class="book-description">
+          <p>
+            Description: <span>{{ book.bookDescription }}</span>
+          </p>
+        </div>
+        <p>
+          Date: <time>{{ book._createdOn | date }}</time>
+        </p>
+      </div>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <button class="edit-button" (click)="onToggle()">Edit Book</button>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <button (click)="deleteBook()">Delete Book</button>
+    </div>
+  </div>
+
+  <!-- //TODO -- Need to add [formGroup]="form" -->
+  <ng-container class="book-content" *ngIf="showEditMode">
+    <form [formGroup]="form" (ngSubmit)="saveBookHandle()">
+      <!-- book-title  -->
+      <div class="book-title">
+        <div class="book-name-wrapper">
+          <div class="book-edit-name">
+            <p>Book title:</p>
+            <input
+              type="text"
+              name="bookName"
+              id="bookName"
+              [value]="bookDetails.bookName"
+              formControlName="bookName"
+              minlength="2"
+            />
+          </div>
+          <!-- bookName validations -->
+          <ng-container *ngIf="form.get('bookName')?.touched">
+            <p class="error" *ngIf="form.get('bookName')?.errors?.['required']">
+              Book title is required!
+            </p>
+            <p
+              class="error"
+              *ngIf="form.get('bookName')?.errors?.['minlength']"
+            >
+              Book title must have at least 2 characters!
+            </p>
+          </ng-container>
+
+          <div class="book-author">
+            <p>Author:</p>
+            <input
+              type="text"
+              name="authorName"
+              id="authorName"
+              [value]="bookDetails.authorName"
+              formControlName="authorName"
+              minlength="2"
+            />
+          </div>
+          <!-- authorName validations -->
+          <ng-container *ngIf="form.get('authorName')?.touched">
+            <p
+              class="error"
+              *ngIf="form.get('authorName')?.errors?.['required']"
+            >
+              Author name is required!
+            </p>
+            <p
+              class="error"
+              *ngIf="form.get('authorName')?.errors?.['minlength']"
+            >
+              Author name must have at least 2 characters!
+            </p>
+          </ng-container>
+
+          <div class="book-description">
+            <p>Description:</p>
+            <textarea
+              type="text"
+              name="bookDescription"
+              id="bookDescription"
+              [value]="bookDetails.bookDescription"
+              formControlName="bookDescription"
+              minlength="10"
+            >
+            </textarea>
+          </div>
+          <!-- Book description validations -->
+          <ng-container *ngIf="form.get('bookDescription')?.touched">
+            <p
+              class="error"
+              *ngIf="form.get('bookDescription')?.errors?.['required']"
+            >
+              Book description is required!
+            </p>
+            <p
+              class="error"
+              *ngIf="form.get('bookDescription')?.errors?.['minlength']"
+            >
+              Book description must have at least 10 characters!
+            </p>
+          </ng-container>
+
+          <div class="book-image">
+            <p>Book image:</p>
+            <textarea
+              type="text"
+              name="bookImage"
+              id="bookImage"
+              [value]="bookDetails.bookImage"
+              formControlName="bookImage"
+              minlength="10"
+            >
+            </textarea>
+          </div>
+          <!-- Book image validations -->
+          <ng-container *ngIf="form.get('bookImage')?.touched">
+            <p
+              class="error"
+              *ngIf="form.get('bookImage')?.errors?.['required']"
+            >
+              Book image is required!
+            </p>
+            <p
+              class="error"
+              *ngIf="form.get('bookImage')?.errors?.['minlength']"
+            >
+              Book image must have at least 10 characters!
+            </p>
+          </ng-container>
+        </div>
+      </div>
+      <div class="buttonDiv">
+        <button class="red-button" (click)="onCancel($event)">Cancel</button>
+        <button
+          class="green-button"
+          [disabled]="form.invalid"
+          [style]="{ backgroundColor: form.invalid ? 'grey' : 'green' }"
+        >
+          Save
+        </button>
+      </div>
+      <div class="buttonDiv" *ngIf="isLoggedIn">
+        <button (click)="deleteBook()">Delete Book</button>
+      </div>
+    </form>
+  </ng-container>
+</div>
